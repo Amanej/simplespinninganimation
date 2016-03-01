@@ -1,0 +1,75 @@
+<html>
+<style>
+.dot {
+  background: linear-gradient(#9E5151,#713827);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 5px;
+}
+.container {
+  width: 157px;
+  position: absolute;
+  top: 25%;
+  left: 46%;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.container {
+  animation: spin 1.5s linear infinite;
+}
+#container {
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+</style>
+
+<body>
+<div id="container" class="container"></div>
+
+</body>
+
+<script>
+var counter = 0;
+
+//var container = document.getElementsByClassName('container');
+
+if(counter < 5) {
+  var newdot = document.createElement('div');
+  newdot.className = "dot " + counter;
+  newdot.textContent = counter;
+  document.getElementById('container').appendChild(newdot);
+  counter +=1;
+}
+
+for (i = 0; i < 20; i++) {
+  var newdot = document.createElement('div');
+  newdot.className = "dot " + i;
+  document.getElementById('container').appendChild(newdot);
+}
+
+</script>
+
+</html>
